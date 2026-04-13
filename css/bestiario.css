@@ -1,0 +1,401 @@
+:root{
+    --cremacafe: #F2D0A7;
+    --cafeconleche: #F2E0D5;
+    --nucita:#D98D62;
+    --azulnocturno: #1D4859;
+    --blanquito: #ffffff;
+    --chocolate: #593622;
+    --tipografiatitulos:4.6rem;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.pirata-one-regular {
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lora {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background: radial-gradient(circle, var(--cremacafe), var(--nucita));
+    color: var(--azulnocturno);
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+
+
+.titulo {
+    font-family: 'Pirata One', cursive;
+    color: var(--chocolate);
+    font-size: 4rem;
+    margin: 3rem 0;
+}
+
+.nav-bg {
+    background-color: var(--cremacafe);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media(min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    padding: 1rem;
+    color: var(--azulnocturno);
+    font-family: "Lora", serif;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--chocolate);
+    color: var(--cafeconleche);
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+.filtros button {
+    margin: 10px;
+    background: var(--azulnocturno);
+    color: var(--cafeconleche);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: none;
+}
+
+.filtros button:hover {
+    background: var(--chocolate);
+}
+
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.card {
+    width: 260px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 12 / 9; 
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+
+.card h2, .card h5 {
+    font-family: "Pirata One", system-ui;
+}
+
+
+.demonio img { 
+    box-shadow: 0 0 15px var(--azulnocturno); 
+}
+
+.angel img { 
+    box-shadow: 0 0 15px var(--blanquito); 
+}
+
+.fantasma img { 
+    box-shadow: 0 0 15px var(--cafeconleche); 
+}
+
+.criatura img { 
+    box-shadow: 0 0 15px var(--chocolate); 
+}
+
+
+.modal-content {
+    background: var(--cafeconleche);
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: var(--azulnocturno) !important;
+    color: white;
+}
+
+
+.close {
+    cursor: pointer;
+}
+
+@keyframes aparecerCartas {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: aparecerCartas 0.8s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+
+@keyframes pulsoAura {
+    0% {
+        filter: drop-shadow(0 0 5px currentColor);
+    }
+    50% {
+        filter: drop-shadow(0 0 20px currentColor);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px currentColor);
+    }
+}
+
+.card img {
+    animation: pulsoAura 3s infinite ease-in-out;
+}
+
+.demonio { color: var(--azulnocturno); }
+.angel { color: var(--blanquito); }
+.fantasma { color: var(--cafeconleche); }
+.criatura { color: var(--chocolate); }
+
+@keyframes glitchRevelado {
+  0% {
+    clip-path: inset(50% 0 30% 0);
+    transform: translate(-5px, 0) skew(5deg) scale(1.1);
+  }
+  20% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(5px, 0) skew(-5deg) scale(1.1);
+  }
+  40% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(-5px, -2px) skew(2deg) scale(1.1);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(5px, 2px) skew(-2deg) scale(1.1);
+  }
+  80% {
+    clip-path: inset(0% 0 0% 0);
+    transform: translate(0, 0) skew(0deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) skew(0deg) scale(1.1);
+  }
+}
+
+@keyframes invocacionVortice {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-720deg) translateY(-200px);
+    filter: blur(10px) brightness(2); /* Brillo intenso al inicio */
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(20deg) translateY(0);
+    filter: blur(2px) brightness(1.5);
+  }
+  80% {
+    transform: scale(0.95) rotate(-5deg);
+    filter: blur(0px) brightness(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+@keyframes humoMistico {
+    0% { filter: grayscale(0%) brightness(1) contrast(1); }
+    50% { filter: grayscale(100%) brightness(0.5) sepia(1) hue-rotate(-50deg); }
+    100% { filter: grayscale(0%) brightness(1.2) contrast(1.2); }
+}
+
+.card img {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img {
+    animation: humoMistico 0.8s forwards;
+    /* Crea un efecto de borde quemado */
+    outline: 3px solid var(--chocolate);
+    outline-offset: 10px;
+    border-radius: 5px;
+    transform: translateY(-10px) scale(1.05);
+}
+
+.video-contenedor {
+    margin-top: 5rem;   
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+
+@keyframes sintonizar {
+    0% { opacity: 0; filter: brightness(3) contrast(2) blur(10px); }
+    15% { opacity: 0.8; filter: brightness(0.5) contrast(1.5) blur(0px); }
+    30% { opacity: 0.4; filter: brightness(2) contrast(2); }
+    100% { opacity: 1; filter: brightness(1) contrast(1) blur(0px); }
+}
+
+
+@keyframes zoomEntrada {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+        filter: blur(20px);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes visionFlashback {
+    0% {
+        opacity: 0;
+        transform: scale(2) rotate(15deg);
+        filter: brightness(10) blur(20px) contrast(3);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.1) rotate(-5deg);
+        filter: brightness(2) blur(5px) contrast(2);
+    }
+    15% {
+        /* Efecto Glitch rápido */
+        transform: scale(1.05) translate(10px, -10px);
+        filter: brightness(1.1) contrast(1.1) sepia(1);
+    }
+    20% {
+        transform: scale(1) translate(0, 0);
+        filter: brightness(1) contrast(1) sepia(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1) contrast(1) blur(0px);
+    }
+}
+
+.video-contenedor {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    perspective: 1500px;
+    text-align: center;
+}
+
+.video-contenedor iframe {
+    animation: visionFlashback 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    box-shadow: 0 0 25px color-mix(in srgb, var(--cremacafe) 30%, transparent);
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+@keyframes invocacionVortice {
+    0% {
+        opacity: 0;
+        transform: translateZ(-1000px) rotateY(-720deg) scale(0);
+        filter: blur(15px) hue-rotate(180deg) brightness(2);
+    }
+    60% {
+        opacity: 1;
+        transform: translateZ(100px) rotateY(20deg) scale(1.1);
+        filter: blur(2px) hue-rotate(0deg) brightness(1.5);
+    }
+    80% {
+        transform: translateZ(0) rotateY(-5deg) scale(0.95);
+        filter: blur(0px) brightness(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0) rotateY(0deg) scale(1);
+        filter: blur(0px) brightness(1);
+    }
+}
+
+.video-contenedor {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    perspective: 2000px; 
+    text-align: center;
+}
+
+.video-contenedor iframe {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    
+    animation: invocacionVortice 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    
+    border: 3px solid var(--chocolate);
+    box-shadow: 0 0 30px var(--nucita);
+}

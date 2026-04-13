@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Lora:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/mapa.css">
+
+</head>
+
+<body>
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="index.html"> Inicio </a>
+            <a href="Personajes.html"> Personajes </a>
+            <a href="Bestiario.html"> Bestiario </a>
+            <a href="mapa.html"> Mapa </a>
+        </nav>
+    </div>
+
+    <h1 class="titulo">Mapa Sobrenatural</h1>
+
+    <div class="filtros">
+        <button onclick="filtrarMapa('all')">Todos</button>
+        <button onclick="filtrarMapa('demonio')">Demonios</button>
+        <button onclick="filtrarMapa('angel')">Ángeles</button>
+        <button onclick="filtrarMapa('fantasma')">Fantasmas</button>
+        <button onclick="filtrarMapa('criatura')">Criaturas</button>
+    </div>
+
+    <div class="mapa-container">
+
+        <img src="img/mapa.svg" class="mapa">
+
+        <!-- CALIFORNIA -->
+        <div class="punto fantasma" style="top:42%; left:15%;"
+            onclick="abrirModal('California','Mujer de blanco','Fantasma','T1 - E1')"></div>
+
+        <!-- NEVADA -->
+        <div class="punto demonio" style="top:50%; left:22%;"
+            onclick="abrirModal('Nevada','Demonios en casinos','Demonio','T2')"></div>
+
+        <!-- ARIZONA -->
+        <div class="punto demonio" style="top:60%; left:27%;"
+            onclick="abrirModal('Arizona','Actividad demoníaca','Demonio','T2')"></div>
+
+        <!-- MONTANA -->
+        <div class="punto criatura" style="top:25%; left:35%;"
+            onclick="abrirModal('Montana','Caso Wendigo','Criatura','T1 - E2')"></div>
+
+        <!-- COLORADO -->
+        <div class="punto criatura" style="top:50%; left:37%;"
+            onclick="abrirModal('Colorado','Wendigo en los bosques','Criatura','T1 - E2')"></div>
+
+        <!-- TEXAS -->
+        <div class="punto criatura" style="top:75%; left:50%;"
+            onclick="abrirModal('Texas','Vampiros','Criatura','T2 - E3')"></div>
+
+        <!-- KANSAS -->
+        <div class="punto demonio" style="top:50%; left:48%;"
+            onclick="abrirModal('Lawrence, Kansas','Origen de los Winchester','Demonios','T1 - E1')"></div>
+
+        <!-- SOUTH DAKOTA -->
+        <div class="punto demonio" style="top:35%; left:43%;"
+            onclick="abrirModal('South Dakota','Bobby Singer','Aliado','Varias temporadas')"></div>
+
+        <!-- ILLINOIS -->
+        <div class="punto angel" style="top:40%; left:63%;"
+            onclick="abrirModal('Illinois','Castiel aparece','Ángel','T4 - E1')"></div>
+
+        <!-- WISCONSIN -->
+        <div class="punto criatura" style="top:28%; left:60%;"
+            onclick="abrirModal('Wisconsin','Hombre lobo','Criatura','T2 - E17')"></div>
+
+        <!-- OHIO -->
+        <div class="punto fantasma" style="top:40%; left:70%;"
+            onclick="abrirModal('Ohio','Actividad paranormal','Fantasma','T5 - E1')"></div>
+
+        <!-- NEW YORK -->
+        <div class="punto fantasma" style="top:25%; left:79%;"
+            onclick="abrirModal('New York','Casa embrujada','Fantasma','T1 - E19')"></div>
+
+    </div>
+
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span onclick="cerrarModal()" class="close">&times;</span>
+            <h2 id="tituloModal"></h2>
+            <p id="descModal"></p>
+            <p id="tipoModal"></p>
+            <p id="episodioModal"></p>
+        </div>
+    </div>
+
+    <div class="video-contenedor contenedor">
+        <iframe width="763" height="572" src="https://www.youtube.com/embed/f3qZLkmm0g4"
+            title="supernatural 5x8 Intro part" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+
+    <script src="js/mapa.js"></script>
+
+</body>
+
+</html>
